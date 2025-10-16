@@ -4,35 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adaptive Quiz Engine</title>
+
+  <!-- naglagay ako fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <h1>Quiz Engine</h1>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Quizzes</a></li>
-      <li><a href="#">Profile</a></li>
-    </ul>
-  </nav>
+  <header class="navbar" role="banner">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="material-icons" aria-hidden="true">school</span>
+        <h1>Quiz Engine</h1>
+      </div>
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#" class="nav-item">Home</a>
+        <a href="#" class="nav-item">Quizzes</a>
+        <a href="#" class="nav-item">Profile</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="container">
-    <aside class="sidebar">
-      <h2>Categories</h2>
-      <ul>
-        <li><a href="#" onclick="loadQuiz('math')">Math</a></li>
-        <li><a href="#" onclick="loadQuiz('science')">Science</a></li>
-        <li><a href="#" onclick="loadQuiz('history')">History</a></li>
+    <aside class="sidebar" role="complementary" aria-labelledby="categories-title">
+      <h2 id="categories-title">Categories</h2>
+      <ul class="category-list" role="list">
+        <li role="listitem"><button class="category-btn" onclick="loadQuiz('math')" aria-controls="quiz-form">Math</button></li>
+        <li role="listitem"><button class="category-btn" onclick="loadQuiz('science')" aria-controls="quiz-form">Science</button></li>
+        <li role="listitem"><button class="category-btn" onclick="loadQuiz('history')" aria-controls="quiz-form">History</button></li>
       </ul>
     </aside>
-    <main class="main-content">
-      <form id="quiz-form">
-        <h2 id="quiz-title">Select a category to start</h2>
-        <div id="quiz-questions"></div>
-        <button type="submit" id="submit-btn" style="display:none;">Submit</button>
+
+    <main class="main-content" role="main">
+      <form id="quiz-form" class="card" aria-live="polite" aria-labelledby="quiz-title">
+        <div class="card-header">
+          <h2 id="quiz-title">Select a category to start</h2>
+          <div id="quiz-progress" class="progress" aria-hidden="true"></div>
+        </div>
+
+        <div id="quiz-questions" class="card-body" tabindex="0"></div>
+
+        <div class="card-actions">
+          <button type="submit" id="submit-btn" class="btn primary" style="display:none;">Submit</button>
+          <button type="button" id="reset-btn" class="btn" onclick="location.reload()">Reset</button>
+        </div>
       </form>
-      <div id="quiz-result"></div>
+
+      <section id="quiz-result" class="result" aria-live="assertive"></section>
     </main>
   </div>
+
+  <footer class="footer" role="contentinfo">
+    <small>Designed using Material-inspired styles · Accessible & responsive</small>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
