@@ -99,3 +99,5 @@ function showResult() {
     document.getElementById('quiz-result').innerHTML += `<button onclick="loadQuiz('${currentCategory}')">Try Again</button>`;
   }
 }
+/*cabuyao asan binago mo rito? wala ako makita brah - avena*/
+/*seryoso ano pinaggagawa mo sabi mo meron ka nilagay na new questions e wala naman - avena*/
