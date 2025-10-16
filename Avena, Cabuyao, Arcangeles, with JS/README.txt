@@ -2,3 +2,6 @@ lahat ng code na ito ay gagawin sa react, tingnan ang node modules para malaman 
 FROM NOW ON AY LAHAT NG CODE AY DAPAT GUMAGAMIT NA NG COMPLEX JS AND CSS
 DAPAT HINDI NA BASIC HTML PAGE MAKIKITA TY
 and lastly wag kalimutan mag install ng live server para maview
+
+ALSO PLEASE NEED NATIN NG DASHBOARD, HOME LAYPUTS, PROFIULE LAYOUTSSSSSAHDASJKDASGDWGADYHY 
+naputulan kami wifi kaya di ko makalikot -avena
